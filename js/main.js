@@ -44,25 +44,29 @@ function checkStatus() {
 
 // 단어 불러오기
 function getWords() {
-    axios.get('https://random-word-api.herokuapp.com/word?number=100')
-        .then(function (response) {
-            response.data.forEach((word) => {
-                if(word.length < 10) {
-                    words.push(word);
-                }
-            })
-            buttonChange('게임 시작');
-            console.log(words);
-        })
-        .catch(function (error) {
-            // handle error
-            console.log(error);
-        })
+    // // axios를 써서 불러옴 
+    // axios.get('https://random-word-api.herokuapp.com/word?number=100')
+    //     .then(function (response) {
+    //     response.data.forEach((word) => {
+    //         if(word.length < 10) {
+    //             words.push(word);
+    //         }
+    //     }) 
+    //     buttonChange('게임 시작');  
+    //     console.log(words);
+    // })
+    // .catch(function (error) {
+    //   // handle error
+    //   console.log(error);
+    // })
+    words = ['Hello', 'Banana', 'Apple', 'Cherry'];
+    buttonChange('게임 시작');
 }
 
 // 단어 일치 체크
 function checkMatch() {
-    if(wordInput.value === wordDisplay.innerText) {
+    if(wordInput.value.toLowerCase() === wordDisplay.innerText.toLowerCase()) {
+        // 정답을 맞추고 나면 단어 리셋
         wordInput.value = "";
         if(!isPlaying) {
             return;
@@ -82,6 +86,7 @@ function countDown() {
     if(!isPlaying) {
         clearInterval(timeInterval);
     }
+    // 시간이 줄어들면, 보여지는 시간도 줄어들도록
     timeDisplay.innerText = time;
 }
 
