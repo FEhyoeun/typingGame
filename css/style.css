@@ -1,3 +1,9 @@
+:root {
+    --color-green: #68bd19;
+    --color-white: #ffffff;
+    --color-gray: #ccc;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -12,16 +18,16 @@ body {
 
 .header {
     width: 100%;
-    background: #3b5999;
-    color: #ffffff;
+    background: var(--color-green);
+    color: var(--color-white);
     text-align: center;
-    padding: 1rem;
+    padding: 2rem;
 }
 
 .word-display {
     margin-top: 3rem;
     font-size: 80px;
-    color: #3b5999;
+    color: var(--color-green);
 }
 
 .word-input-box {
@@ -45,17 +51,26 @@ body {
     font-size: 30px;
 }
 
+.buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
 .button {
-    width: 200px;
+    width: 100px;
     height: 35px;
-    background: #3b5999;
-    color: #ffffff;
+    background: var(--color-green);
+    color: var(--color-white);
     border: none;
     margin-top: 3rem;
+    margin-right: 1rem;
     cursor: pointer;
+
 }
 
 .loading {
-    background: #ccc;
+    background: var(--color-gray);
     cursor: not-allowed;
 }

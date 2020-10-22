@@ -79,7 +79,6 @@ function checkMatch() {
     }
 }
 
-
 function countDown() {
     //(조건) ? 참일 경우 : 거짓일 경우 
     time > 0 ? time -- : isPlaying = false;
@@ -93,4 +92,5 @@ function countDown() {
 function buttonChange(text) {
     button.innerText = text;
     text === '게임 시작' ? button.classList.remove('loading') : button.classList.add('loading');
-} 
+}
+
