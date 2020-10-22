@@ -1,17 +1,23 @@
 // 사용변수
 const GAME_TIME = 9;
+const msg = '획득 점수를 기록하시겠습니까?';
 let score = 0;
+let recallScore = 0;
 let time = GAME_TIME;
 let isPlaying = false;
 let timeInterval;
 let checkInterval;
 let words = [];
 
+
 const wordInput = document.querySelector('.word-input');
 const wordDisplay = document.querySelector('.word-display');
 const scoreDisplay = document.querySelector('.score');
+const recallScoreDisplay = document.querySelector('.recent-score');
 const timeDisplay = document.querySelector('.time');
 const button = document.querySelector('.button');
+const buttonQuit = document.querySelector('.quit');
+
 
 init();
 
@@ -94,3 +100,18 @@ function buttonChange(text) {
     text === '게임 시작' ? button.classList.remove('loading') : button.classList.add('loading');
 }
 
+function quit() {
+    time = 0;
+    let r = confirm(msg);
+    if(r == true) {
+        // 저장한다고 했을 때: score 값이 저장되고 초기 화면으로
+        recallScore = score;
+        recallScoreDisplay.innerText = recallScore;
+        score = 0;
+        scoreDisplay.innerText = 0;
+    } else {
+        // 저장하지 않는다고 했을 때: score 0으로 reset되며 초기 화면으로
+        score = 0;
+        scoreDisplay.innerText = 0;
+    }
+}

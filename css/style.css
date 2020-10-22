@@ -1,7 +1,12 @@
 :root {
+    /* color */
     --color-green: #68bd19;
     --color-white: #ffffff;
     --color-gray: #ccc;
+
+    /* space */
+    --space-general: 3rem;
+    --space-narrow: 1rem;
 }
 
 * {
@@ -21,17 +26,17 @@ body {
     background: var(--color-green);
     color: var(--color-white);
     text-align: center;
-    padding: 2rem;
+    padding: var(--space-general);
 }
 
 .word-display {
-    margin-top: 3rem;
+    margin-top: var(--space-general);
     font-size: 80px;
     color: var(--color-green);
 }
 
 .word-input-box {
-    margin-top: 2rem;
+    margin-top: var(--space-general);
 }
 
 .word-input {
@@ -40,14 +45,14 @@ body {
 }
 
 .game-info {
-    margin-top: 2rem;
+    margin-top: var(--space-narrow);
     font-size: 0.8rem;
     display: flex;
     justify-content: space-between;
     width: 200px;
 }
 
-.time, .score {
+.time, .score, .recent-score {
     font-size: 30px;
 }
 
@@ -55,7 +60,7 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 .button {
@@ -64,9 +69,15 @@ body {
     background: var(--color-green);
     color: var(--color-white);
     border: none;
-    margin-top: 3rem;
+    margin-top: var(--space-general);
     margin-right: 1rem;
     cursor: pointer;
+
+}
+
+.recall-score {
+    margin-top: var(--space-narrow);
+    font-size: 0.8rem;
 
 }
 
